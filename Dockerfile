@@ -1,6 +1,6 @@
 #author: chris murray
 #date 20220320
-#nox server
+#arcade
 
 FROM ubuntu:21.04
 LABEL maintainer="cmurray@927.technology"
