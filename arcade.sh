@@ -1,7 +1,6 @@
 #!/bin/bash
 
 platform="${1}"
-platform_path="~/games"
 rom="${2}"
 
 docker run                          \
@@ -9,8 +8,8 @@ docker run                          \
   --rm                              \
   -v /dev/snd:/dev/snd              \
   --privileged                      \
-  --name mame                       \
-  --hostname mame                   \
+  --name arcade                     \
+  --hostname arcade                 \
   -e DISPLAY=${DISPLAY}             \
   -e PLATFORM=${platform}           \
   -e ROM="${rom}"                   \
