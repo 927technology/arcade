@@ -5,24 +5,22 @@
 FROM ubuntu:21.04
 LABEL maintainer="cmurray@927.technology"
 
-ENV version=0.1
+ENV version=0.2
 
 #update system
 RUN apt update
 RUN apt upgrade -y
 
 #install nox
-RUN useradd mame
-RUN mkdir -p /home/mame
-RUN chown -R mame:mame /home/mame
-RUN chmod -R 770 /home/mame
+RUN useradd arcade
+RUN mkdir -p /home/arcade
+RUN chown -R arcade:arcade /home/arcade
+RUN chmod -R 770 /home/arcade
 RUN apt install -y mame pulseaudio
 
 #set container user
-USER mame
-
-#EXPOSE 8080/tcp
+USER arcade
 
 #entrypoint
 COPY usr/local/bin/entrypoint.sh /usr/local/bin/
-#ENTRYPOINT /usr/local/bin/entrypoint.sh
+ENTRYPOINT /usr/local/bin/entrypoint.sh

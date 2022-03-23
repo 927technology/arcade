@@ -1,12 +1,9 @@
 #!/bin/bash
 
 case ${PLATFORM} in 
-    nes)
+    a2600 | a5200 | a7800 | nes | snes)
         platform_bin=/usr/games/mame
-        platform_path=~/games/mame/nes
-        platform_cmd="${platform_bin} ${PLATFORM} -cart ${platform_path}/${ROM}"
+        platform_path=/home/arcade/games/mame/${PLATFORM}
+        "${platform_bin}" ${PLATFORM} -cart "${platform_path}/${ROM}"
     ;;
 esac
-
-#run platform_cmd if path and bin are present
-[ -d ${platform_path} ] & [ -f ${platform_bin} ] && ${platform_cmd}
