@@ -17,4 +17,4 @@ docker run                          \
   -v ${HOME}:${HOME}                \
   -v /etc/passwd:/etc/passwd        \
   -v ~/games:/home/arcade/games     \
-  927technology/arcade:0.2
+  927technology/arcade:0.3
