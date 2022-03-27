@@ -11,4 +11,14 @@ case ${PLATFORM} in
         platform_path=/home/arcade/games/mame/${PLATFORM}
         "${platform_bin}" -rp ${platform_path} "${ROM}"
     ;;
+    psx)
+        platform_bin=/usr/games/pcsxr
+        platform_path=/home/arcade/games/pcsxr
+        "${platform_bin}" -nogui -cdfile "${platform_path}/${ROM}"
+    ;;
+    psx2)
+        platform_bin=/opt/pcsx2/bin/pcsx2
+        platform_path=/home/arcade/games/pcsx2
+        "${platform_bin}" --nogui --fullscreen "${platform_path}/${ROM}"
+    ;;
 esac

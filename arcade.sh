@@ -14,7 +14,7 @@ docker run                          \
   -e PLATFORM=${platform}           \
   -e ROM="${rom}"                   \
   -v /tmp/.X11-unix/:/tmp/.X11-unix \
-  -v ${HOME}:${HOME}                \
-  -v /etc/passwd:/etc/passwd        \
   -v ~/games:/home/arcade/games     \
-  927technology/arcade:0.3
+  -v ${HOME}:${HOME}                \
+  -v ~/games/bios/pcsx2:/opt/pcsx2/bin/bios   \
+  927technology/arcade:0.4
