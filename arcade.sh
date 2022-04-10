@@ -17,4 +17,4 @@ docker run                          \
   -v ~/games:/home/arcade/games     \
   -v ${HOME}:${HOME}                \
   -v ~/games/bios/pcsx2:/opt/pcsx2/bin/bios   \
-  927technology/arcade:0.4
+  927technology/arcade:0.5
