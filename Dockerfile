@@ -19,18 +19,23 @@ RUN chown -R arcade:arcade /home/arcade
 RUN chmod -R 770 /home/arcade
 
 #add build files
+COPY build/dosbox.sh /root/
 COPY build/ecm_1.03-1_amd64.deb /root/
 COPY build/mame.sh /root/
 COPY build/pcsxr.sh /root/
 COPY build/pcsxr2.sh /root/
 COPY build/PCSX2_ui.ini /root/
 COPY build/PCSX2_vm.ini /root/
+COPY build/vice.sh /root/
 
 #install
+RUN apt update
 RUN apt install -y pulseaudio
+RUN /root/dosbox.sh
 RUN /root/mame.sh
 RUN /root/pcsxr.sh
 RUN /root/pcsxr2.sh
+RUN /root/vice.sh
 
 #set container user
 USER arcade

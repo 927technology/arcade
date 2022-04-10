@@ -11,6 +11,11 @@ case ${PLATFORM} in
         platform_path=/home/arcade/games/mame/${PLATFORM}
         "${platform_bin}" -rp ${platform_path} "${ROM}"
     ;;
+    dos)
+        platform_bin=/usr/bin/dosbox
+        platform_path=/home/arcade/games/dosbox
+        "${platform_bin}" -c "mount c ${platform_path}/${ROM}" -conf "${platform_path}/${ROM}.conf"
+    ;;
     psx)
         platform_bin=/usr/games/pcsxr
         platform_path=/home/arcade/games/pcsxr
