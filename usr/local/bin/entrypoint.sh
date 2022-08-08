@@ -11,6 +11,11 @@ case ${PLATFORM} in
         platform_path=/home/arcade/games/mame/${PLATFORM}
         "${platform_bin}" -rp ${platform_path} "${ROM}"
     ;;
+    c64)
+        platform_bin=/usr/local/bin/x64sc
+        platform_path=/home/arcade/games/commodore/${PLATFORM}
+        "${platform_bin}" "${platform_path}/${ROM}"
+    ;;
     dos)
         platform_bin=/usr/bin/dosbox
         platform_path=/home/arcade/games/dosbox

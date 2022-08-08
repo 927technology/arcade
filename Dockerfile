@@ -1,18 +1,18 @@
 #author: chris murray
-#date 20220326
+#date 20220805
 #arcade
 
 FROM ubuntu:20.04
 LABEL maintainer="cmurray@927.technology"
 
-ENV version=0.4
+ENV version=0.6
 ENV DEBIAN_FRONTEND=noninteractive
 
 #update system
 RUN apt update
 RUN apt upgrade -y
 
-#install nox
+#configure environment
 RUN useradd arcade
 RUN mkdir -p /home/arcade
 RUN chown -R arcade:arcade /home/arcade
