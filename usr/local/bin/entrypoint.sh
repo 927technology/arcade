@@ -17,7 +17,7 @@ for emulator in ${mame_path} ${vice_path} ${dosbox_path} ${psx_path} ${psx2_path
 done
 
 case ${PLATFORM} in 
-    a2600 | a5200 | gameboy;| gba | gbc | genesis| nes | snes | tg16)
+    a2600 | a5200 | gameboy | gba | gbc | genesis| nes | snes | tg16)
         platform_bin=${mame_path}
         "${platform_bin}" ${PLATFORM} -cart "${platform_path}/${ROM}"
     ;;
