@@ -24,6 +24,5 @@ rom="${2}"
     -v ~/arcade/games:/home/arcade/games                                \
     -v ~/arcade/games/bios:/home/arcade/mame/roms                       \
     -v ~/arcade/games/bios/pcsx2:/opt/pcsx2/bin/bios                    \
-    --entrypoint /bin/bash                                              \
     -u arcade                                                           \
     927technology/arcade:0.7
