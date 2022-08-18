@@ -32,7 +32,7 @@ COPY build/vice.sh /root/
 RUN apt update
 RUN apt install -y pulseaudio
 RUN /root/dosbox.sh
-RUN /root/mame.sh
+RUN /root/mame.sh apt
 RUN /root/pcsxr.sh
 RUN /root/pcsxr2.sh
 RUN /root/vice.sh
