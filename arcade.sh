@@ -26,4 +26,4 @@ rom="${2}"
     -v ~/arcade/games/bios/pcsx2:/opt/pcsx2/bin/bios                    \
     --entrypoint /bin/bash                                              \
     -u arcade                                                           \
-    927technology/arcade:0.6 
+    927technology/arcade:0.7
