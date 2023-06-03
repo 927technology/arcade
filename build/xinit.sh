@@ -11,9 +11,9 @@ auto_login_username=${1}
 
 #main
 #create autologin user
-getent passwd ${auto_login_user}
+getent passwd ${auto_login_username}
 if [ ! ${?} -eq ${exitok} ]; then
-  useradd -m ${auto_login_user}
+  useradd -m ${auto_login_username}
 fi
 
 #x window system
@@ -25,18 +25,18 @@ apt install -y            \
 
 #allow autologin user access to xserver, audio, video, and tty
 echo allowed_uses=anybody > /etc/X11/Xwrapper.config
-usermod -aG audio,tty,video ${auto_login_user}
+usermod -aG audio,tty,video ${auto_login_username}
 
 #create xinit script
-cat << EOF > /home/${auto_login_user}/.xinitrc
+cat << EOF > /home/${auto_login_username}/.xinitrc
 #!/bin/bash
 #startx
 /usr/bin/matchbox-window-manager & /usr/local/bin/attract
 EOF
-chmod +x /home/${auto_login_user}/.xinitrc
+chmod +x /home/${auto_login_username}/.xinitrc
 
 #start x on automatic shell login
-echo /usr/bin/startx >> /home/${auto_login_user}/.bashrc
+echo /usr/bin/startx >> /home/${auto_login_username}/.bashrc
 
 #automatic login
 mkdir -p ${auto_login_path}
