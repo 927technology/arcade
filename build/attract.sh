@@ -4,7 +4,7 @@
 ##do not use 2.6.2 it is broken
 attract_url=https://github.com/mickelson/attract/archive/v2.6.1.tar.gz
 attract_file=`echo ${attract_url} | awk -F"/" '{print $NF}'`
-attracct_folder=`echo ${attract_file} | sed 's/.tar.gz//g'`
+attracct_folder=attract-2.6.1
 
 attract_layouts_folder=/usr/local/share/attract/layouts
 
