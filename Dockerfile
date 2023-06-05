@@ -2,10 +2,11 @@
 #date 20220805
 #arcade
 
-FROM ubuntu:20.04
+#FROM ubuntu:20.04
+FROM debian:11
 LABEL maintainer="cmurray@927.technology"
 
-ENV version=0.6
+ENV VERSION=0.8
 ENV DEBIAN_FRONTEND=noninteractive
 
 #update system
@@ -30,7 +31,7 @@ COPY build/vice.sh /root/
 
 #install
 RUN apt update
-RUN apt install -y pulseaudio
+RUN apt install -y pulseaudio mate-desktop
 RUN /root/dosbox.sh
 RUN /root/mame.sh apt
 RUN /root/pcsxr.sh

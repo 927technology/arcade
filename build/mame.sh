@@ -9,10 +9,11 @@ case ${1} in
             dirmngr                     \
             apt-transport-https         \
             lsb-release                 \
-            ca-certificates
-            
+            ca-certificates		\
+            joystick
+
         add-apt-repository ppa:c.falco/mame
-        
+
         apt install -y mame
     ;;
     download)
